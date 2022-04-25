@@ -19,6 +19,6 @@ class UserController extends Controller
            'email'=>$request->email,
            'password'=>$request->pswd
        ]);
-       return ['result'=>'Data Insert successfully...'];
+  
     }
 }

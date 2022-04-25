@@ -55,14 +55,17 @@ rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCE
 jQuery('#form').submit(function(e)
 {
     e.preventDefault();
+    jQuery('.btn').attr('disabled',true);
+    jQuery('.btn').attr('value',"please wait..");
     jQuery.ajax({
         url:"{{ url('store') }}",
         data:jQuery('#form').serialize(),
         type:'post',
         success:function(result)
         {
-            console.log(result);
             jQuery('#form')['0'].reset();
+            jQuery('.btn').attr('disabled',false);
+            jQuery('.btn').attr('value',"Submit");
         }
     });
 
