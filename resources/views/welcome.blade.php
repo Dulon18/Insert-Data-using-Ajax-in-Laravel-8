@@ -39,7 +39,7 @@ rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCE
                 <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pswd">
             </div>
 
-            <button type="submit" class="btn btn-primary" id="submit">Submit</button>
+            <button type="submit" class="btn btn-primary" >Submit</button>
      </form>
 
         </div> 
@@ -62,6 +62,7 @@ jQuery('#form').submit(function(e)
         success:function(result)
         {
             console.log(result);
+            jQuery('#form')['0'].reset();
         }
     });
 
